@@ -1,6 +1,5 @@
 import nltk
 import requests
-#from nltk import word_tokenize
 from nltk.tokenize import RegexpTokenizer
 
 # Read the "Origin of Species"
