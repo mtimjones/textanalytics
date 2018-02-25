@@ -1,5 +1,6 @@
 import nltk
 import requests
+import random
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
 
@@ -10,10 +11,10 @@ r = requests.get("http://www.gutenberg.org/cache/epub/1228/pg1228.txt");
 sent = sent_tokenize( r.text )
 
 print len( sent )
-print sent[266]
+print sent[random.randint(0,len(sent))]
 
 # Tokenize words from the text
 words = word_tokenize( r.text )
 
 print len( words )
-print words[ 15001 ]
+print words[ random.randint(0,len(words)) ]
