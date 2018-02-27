@@ -5,6 +5,6 @@ from nltk.book import *
 
 fd = FreqDist(text7)
 
-mc = fd.most_common(5)
+mc = fd.most_common(8)
 
 print mc
