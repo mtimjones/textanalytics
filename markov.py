@@ -12,15 +12,15 @@ def CreateTuples( words ):
    return tuples
 
 # Iterate the bigrams and construct a sentence until a '.' is encountered.
-def EmitSentence( cfd ):
+def EmitSentence( cfdist ):
    word = u'I'
    sentence = []
    sentence.append(word)
 
    while word != '.':
       options = []
-      for gram in cfd[word]:
-         for result in range(cfd[word][gram]):
+      for gram in cfdist[word]:
+         for result in range(cfdist[word][gram]):
             options.append(gram)
 
       word = options[int((len(options))*random.random())]
@@ -39,7 +39,7 @@ tokens = word_tokenize( r.text )
 tuples = CreateTuples( tokens )
 
 # Create a conditional frequency distribution based upon the tuples
-cfd = nltk.ConditionalFreqDist( tuples )
+cfdist = nltk.ConditionalFreqDist( tuples )
 
 # Emit a random sentence based upon the corpus
-EmitSentence( cfd )
+EmitSentence( cfdist )
